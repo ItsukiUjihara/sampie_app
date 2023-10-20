@@ -11,34 +11,10 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "sample app", '#', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   '#' %></li>
-            <li><%= link_to "Help",   '#' %></li>
-            <li><%= link_to "Log in", '#' %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <%= render 'layouts/header' %>
     <div class="container">
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
-    <div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
-
-  <h2>
-    This is the home page for the
-    <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
-
-  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
-</div>
-
-<%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200"),
-                      "https://rubyonrails.org/" %>
   </body>
 </html>

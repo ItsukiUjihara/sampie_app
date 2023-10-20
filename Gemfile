@@ -4,6 +4,8 @@ ruby "3.1.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.1"
+gem "bootstrap-sass",  "3.4.1"
+gem "sassc-rails",     "2.1.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -45,27 +47,21 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
+  gem "debug",   "1.7.1", platforms: %i[ mri mingw x64_mingw ]
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
-
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
-
-  gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
+  gem "web-console", "4.2.0"
+  gem "solargraph",  "0.48.0"
 end
 
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-
-  gem "bootstrap-sass",  "3.4.1"
-end
+  group :test do
+    gem "capybara",                 "3.38.0"
+    gem "selenium-webdriver",       "4.8.3"
+    gem "webdrivers",               "5.2.0"
+    gem "rails-controller-testing", "1.0.5"
+    gem "minitest",                 "5.18.0"
+    gem "minitest-reporters",       "1.6.0"
+    gem "guard",                    "2.18.0"
+    gem "guard-minitest",           "2.4.6"
+  end
